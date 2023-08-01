@@ -1,6 +1,9 @@
 import { Server } from "socket.io";
 import { createServer } from "http";
 import { ClientToServer, ServerToClient } from "./SocketActions";
+import { config } from "dotenv";
+
+config();
 
 const port = process.env.PORT || 3000
 
