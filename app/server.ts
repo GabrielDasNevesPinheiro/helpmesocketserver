@@ -27,5 +27,5 @@ socketServer.on("connection", (socket) => {
 })
 
 httpServer.listen(3001, () => {
-    console.log("Socket server ON");
+    console.log(`Socket server ON IN ${httpServer.address}`);
 });
