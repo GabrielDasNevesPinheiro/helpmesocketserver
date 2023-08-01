@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 import { createServer } from "http";
 import { ClientToServer, ServerToClient } from "./SocketActions";
 
-
+const port = 3000 || 3001
 
 const httpServer = createServer({ keepAlive: true });
 const socketServer = new Server<ClientToServer, ServerToClient>(httpServer, {
@@ -26,6 +26,6 @@ socketServer.on("connection", (socket) => {
 
 })
 
-httpServer.listen(3001, () => {
-    console.log(`Socket server ON IN ${httpServer.address}`);
+httpServer.listen(port, () => {
+    console.log(`Socket server ON IN ${port}`);
 });
