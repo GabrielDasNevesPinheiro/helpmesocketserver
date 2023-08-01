@@ -1,5 +1,6 @@
 import { Server } from "socket.io";
 import { createServer } from "http";
+import express from "express";
 import { ClientToServer, ServerToClient } from "./SocketActions";
 import { config } from "dotenv";
 
@@ -7,11 +8,12 @@ config();
 
 const port = process.env.PORT || 3000
 
-const httpServer = createServer({ keepAlive: true });
+const app = express();
+const httpServer = createServer(app);
 const socketServer = new Server<ClientToServer, ServerToClient>(httpServer, {
     cors: {
         origin: "*",
-        methods: ["GET", "POST"]
+        methods: ["GET", "POST"],
     }
 });
 
