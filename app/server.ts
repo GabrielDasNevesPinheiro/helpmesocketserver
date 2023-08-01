@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 import { createServer } from "http";
 import { ClientToServer, ServerToClient } from "./SocketActions";
 
-const port = 3000 || 3001
+const port = process.env.PORT || 3000
 
 const httpServer = createServer({ keepAlive: true });
 const socketServer = new Server<ClientToServer, ServerToClient>(httpServer, {
