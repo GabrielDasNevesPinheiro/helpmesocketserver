@@ -31,6 +31,10 @@ socketServer.on("connection", (socket) => {
 
 })
 
+setTimeout(() => {
+    console.log("KEEP ALIVE TASK");
+}, 15000);
+
 httpServer.listen(port, () => {
     console.log(`Socket server ON IN ${port}`);
 });
