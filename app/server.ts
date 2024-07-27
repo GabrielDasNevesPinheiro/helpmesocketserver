@@ -33,9 +33,4 @@ socketServer.on("connection", (socket) => {
 
 httpServer.listen(port, () => {
     console.log(`Socket server ON IN ${port}`);
-
-    setInterval(() => {
-        console.log("KEEP ALIVE TASK");
-    }, 15000);
-
 });
